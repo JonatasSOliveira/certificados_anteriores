@@ -2,39 +2,41 @@
 {% extends "paginas/componentes/lista_componente.html" %}
 
 {% block titulo %}
-Listagem de Estudante
+Listagem de Estágio
 {% endblock titulo%}
 
 {% block titulo_conteudo %}
-Listagem de Estudante
+Listagem de Estágio
 {% endblock titulo_conteudo%}
 
 {% block url_cadastro %}
-{% url 'estudante-cadastro' %}
+{% url 'estagio-cadastro' %}
 {% endblock url_cadastro%}
 
 {% block url_atualizacao %}
-{% url 'estudante-atualizacao' obj.pk %}
+{% url 'estagio-atualizacao' obj.pk %}
 {% endblock url_atualizacao %}
 
 {% block url_exclusao %}
-{% url 'estudante-exclusao' obj.pk %}
+{% url 'estagio-exclusao' obj.pk %}
 {% endblock url_exclusao %}
 
 {% block texto_btn_novo %}
-Novo Estudante
+Novo Estágio
 {% endblock texto_btn_novo%}
 
 {% block colunas %}
-<th>Nome</th>
-<th>Matrícula</th>
-<th>Data Nasc.</th>
-<th>Email</th>
+<th>Estudante</th>
+<th>Empresa</th>
+<th>Data Início</th>
+<th>Data Término</th>
+<th>Protocolado Por</th>
 {% endblock colunas%}
 
 {% block linhas %}
-<td>{{ obj.nome }}</td>
-<td>{{ obj.matricula }}</td>
-<td>{{ obj.data_nascimento }}</td>
-<td>{{ obj.email }}</td>
+<td>{{ obj.estudante.nome }}</td>
+<td>{{ obj.empresa }}</td>
+<td>{{ obj.data_inicio }}</td>
+<td>{{ obj.data_termino }}</td>
+<td>{{ obj.protocolado_por }}</td>
 {% endblock linhas%}

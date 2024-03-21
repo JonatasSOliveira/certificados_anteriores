@@ -32,6 +32,12 @@ class EstudanteUpdateView(UpdateView):
     fields = "__all__"
     template_name = "paginas/estudante/atualizacao.html"
     success_url = reverse_lazy('estudante-lista')
+    
+    
+class EstudanteDeleteView(DeleteView):
+    model = Estudante
+    template_name = "paginas/estudante/exclusao.html"
+    success_url = reverse_lazy('estudante-lista')
 
 
 class EstagioCreateView(LoginRequiredMixin, CreateView):
@@ -39,3 +45,20 @@ class EstagioCreateView(LoginRequiredMixin, CreateView):
     fields = "__all__"
     template_name = "paginas/estagio/cadastro.html"
     
+
+class EstagioListView(ListView):
+    model = Estagio
+    template_name = "paginas/estagio/lista.html"
+
+
+class EstagioUpdateView(UpdateView):
+    model = Estagio
+    fields = "__all__"
+    template_name = "paginas/estagio/atualizacao.html"
+    success_url = reverse_lazy('estagio-lista')
+
+
+class EstagioDeleteView(DeleteView):
+    model = Estagio
+    template_name = "paginas/estagio/exclusao.html"
+    success_url = reverse_lazy('estagio-lista')
