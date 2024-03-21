@@ -1,0 +1,14 @@
+{% extends "paginas/modelo.html" %}
+
+{% load static %}
+
+{% block conteudo %}
+<div>
+    <a href="{% block url_cadastro %}{% endblock url_cadastro %}">
+        <button type="button">
+            {% block texto_btn_novo %}
+            {% endblock texto_btn_novo %}
+        </button>
+    </a>
+</div>
+{% endblock %}

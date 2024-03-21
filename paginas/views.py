@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from cadastros.models import Estagio, Estudante
@@ -14,12 +14,18 @@ class SobreView(TemplateView):
     template_name = "paginas/sobre.html"
     
 
-class EstudanteCreateView(LoginRequiredMixin, CreateView):
+class EstudanteCreateView(CreateView):
     model = Estudante
     fields = "__all__"
+    template_name = "paginas/estudante/cadastro.html"
+    
+class EstudanteListView(ListView):
+    model = Estudante
+    template_name = "paginas/estudante/lista.html"
 
 
 class EstagioCreateView(LoginRequiredMixin, CreateView):
     model = Estagio
     fields = "__all__"
+    template_name = "paginas/estagio/cadastro.html"
     
