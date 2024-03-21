@@ -19,6 +19,9 @@ class Estudante(models.Model):
     email = models.EmailField()
     atualizado_em = models.DateTimeField(auto_now=True)
     
+    def __str__(self) -> str:
+        return self.nome
+    
 class Estagio(models.Model):
     estudante = models.ForeignKey(Estudante, related_name="estagios", on_delete=models.PROTECT)
     empresa = models.TextField(max_length=255)
@@ -26,3 +29,6 @@ class Estagio(models.Model):
     data_termino = models.DateField(null=True, blank=True)
     protocolado_por = models.ForeignKey(User, on_delete=models.PROTECT)
     data_protocolo = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) -> str:
+        return f'{self.empresa} - {self.data_inicio}'
