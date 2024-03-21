@@ -6,13 +6,13 @@
     <div>
         <h3>{% block titulo_conteudo %}{% endblock titulo_conteudo %}</h3>
         <a href="{% block url_cadastro %}{% endblock url_cadastro %}">
-            <button type="button">
+            <button class="btn btn-success" type="button">
                 {% block texto_btn_novo %}
                 {% endblock texto_btn_novo %}
             </button>
         </a>
         <div>
-            <table>
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -29,12 +29,12 @@
                             {% endblock linhas %}
                             <td>
                                 <a href="{% block url_atualizacao %}{% endblock url_atualizacao %}">
-                                    <button type="button">
+                                    <button class="btn btn-warning" type="button">
                                         Alterar
                                     </button>
                                 </a>
                                 <a href="{% block url_exclusao %}{% endblock url_exclusao %}">
-                                    <button type="button">
+                                    <button class="btn btn-danger" type="button">
                                         Excluir
                                     </button>
                                 </a>

@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.views import LoginView
 
 # Importe suas views
 from .views import (
@@ -30,5 +31,9 @@ urlpatterns = [
          name="estagio-atualizacao"),
     path("estagio/exclusao/<int:pk>/", EstagioDeleteView.as_view(),
          name="estagio-exclusao"),
+    path('login/', LoginView.as_view(
+        template_name='paginas/usuarios/login.html',
+        extra_context={'titulo': 'Autenticação'}
+    ), name='login'),
 
 ]

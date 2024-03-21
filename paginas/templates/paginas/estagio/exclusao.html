@@ -1,5 +1,13 @@
-{% extends "paginas/componentes/confirmacao-exclusao.html" %}
+{% extends "paginas/componentes/confirmacao_exclusao.html" %}
+
+{% block titulo %}
+    Exclusão de Estágio
+{% endblock titulo%}
 
 {% block url_retorno %}
     {% url 'estagio-lista' %}
 {% endblock url_retorno %}
+
+{% block nome_model %}
+    Estágio
+{% endblock nome_model %}

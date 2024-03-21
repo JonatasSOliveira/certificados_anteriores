@@ -1,14 +1,15 @@
-{% extends "paginas/modelo.html" %}
+{% extends "paginas/componentes/formulario_componente.html" %}
 
 {% load static %}
 
+{% block url_retorno %}
+    {% url 'estagio-lista' %}
+{% endblock url_retorno %}
+
 {% block titulo %}
-Atualização de Estágio
-{% endblock titulo%}
+    Atualização de Estágio
+{% endblock titulo %}
 
-
-{% block conteudo %}
-<h3>Atualização de Estágio</h3>
-
-<p>Em construção!</p>
-{% endblock %}
+{% block titulo_conteudo %}
+    Atualização de Estágio
+{% endblock titulo_conteudo %}

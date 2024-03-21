@@ -1,19 +1,20 @@
 {% extends "paginas/modelo.html" %}
 
 {% load static %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
 
 {% block conteudo %}
+    <h3>{% block titulo_conteudo %}{% endblock titulo_conteudo %}</h3>
     <form method="POST">
         {% csrf_token %}
-        <h3>Confirmar Exclusão</h3>
-        <p>Realmente deseja excluir o registro: {{ object }}</p>
+        {{ form.as_p }}
         <a href="{% block url_retorno %}{% endblock url_retorno %}">
-            <button type="button">
+            <button class="btn btn-light" type="button">
                 Cancelar
             </button>
         </a>
-        <button type="submit">
-            Excluir
+        <button type="submit" class="btn btn-success">
+            Salvar
         </button>
     </form>
 {% endblock %}

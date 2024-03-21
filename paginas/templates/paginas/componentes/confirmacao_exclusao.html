@@ -1,0 +1,19 @@
+{% extends "paginas/modelo.html" %}
+
+{% load static %}
+
+{% block conteudo %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Confirmar Exclusão de {% block nome_model %}{% endblock nome_model %}</h3>
+        <p>Realmente deseja excluir o registro: {{ object }}</p>
+        <a href="{% block url_retorno %}{% endblock url_retorno %}">
+            <button class="btn btn-light" type="button">
+                Cancelar
+            </button>
+        </a>
+        <button class="btn btn-danger" type="submit">
+            Excluir
+        </button>
+    </form>
+{% endblock %}

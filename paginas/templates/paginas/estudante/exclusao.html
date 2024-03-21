@@ -1,5 +1,13 @@
-{% extends "paginas/componentes/confirmacao-exclusao.html" %}
+{% extends "paginas/componentes/confirmacao_exclusao.html" %}
+
+{% block titulo %}
+    Exclusão de Estudante
+{% endblock titulo%}
 
 {% block url_retorno %}
     {% url 'estudante-lista' %}
 {% endblock url_retorno %}
+
+{% block nome_model %}
+    Estudante
+{% endblock nome_model %}
