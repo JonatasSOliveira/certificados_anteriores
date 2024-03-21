@@ -5,6 +5,24 @@
 {% url 'estudante-cadastro' %}
 {% endblock url_cadastro%}
 
+{% block url_atualizacao %}
+{% url 'estudante-atualizacao' obj.pk %}
+{% endblock url_atualizacao %}
+
 {% block texto_btn_novo %}
 Novo Estudante
 {% endblock texto_btn_novo%}
+
+{% block colunas %}
+<th>Nome</th>
+<th>Matrícula</th>
+<th>Data Nasc.</th>
+<th>Email</th>
+{% endblock colunas%}
+
+{% block linhas %}
+<td>{{ obj.nome }}</td>
+<td>{{ obj.matricula }}</td>
+<td>{{ obj.data_nascimento }}</td>
+<td>{{ obj.email }}</td>
+{% endblock linhas%}

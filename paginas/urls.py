@@ -1,7 +1,7 @@
 from django.urls import path
 
 # Importe suas views
-from .views import IndexView, SobreView, EstagioCreateView, EstudanteCreateView, EstudanteListView
+from .views import IndexView, SobreView, EstagioCreateView, EstudanteCreateView, EstudanteListView, EstudanteUpdateView
 
 urlpatterns = [
     # Crie suas urls para as views
@@ -10,4 +10,6 @@ urlpatterns = [
     path("estagio/cadastro/", EstagioCreateView.as_view(), name="estagio-cadastro"),
     path("estudante/lista/", EstudanteListView.as_view(), name="estudante-lista"),
     path("estudante/cadastro/", EstudanteCreateView.as_view(), name="estudante-cadastro"),
+    path("estudante/atualizacao/<int:pk>/", EstudanteUpdateView.as_view(),
+         name="estudante-atualizacao"),
 ]
